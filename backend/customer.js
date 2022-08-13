@@ -47,7 +47,7 @@ router.post("/customer/add", (request, response) => {
 });
 
 // POST + PUT = Body, GET + DELETE = Query
-router.get("/customer/delete", (request, response) => {
+router.delete("/customer/delete", (request, response) => {
   database.connection.all(
     `delete from customer where customer_id  = ${request.query.cid}`,
     (errors, results) => {
